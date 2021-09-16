@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDemo2021PizzaRest", "ClassDemo2021PizzaRest\ClassDemo2021PizzaRest.csproj", "{C5D4EEBF-92FD-4E8B-8E70-30DB3FD0950A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLib", "ModelLib\ModelLib.csproj", "{ABB73183-5BF8-46D9-BC67-93917227DE29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5D4EEBF-92FD-4E8B-8E70-30DB3FD0950A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D4EEBF-92FD-4E8B-8E70-30DB3FD0950A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D4EEBF-92FD-4E8B-8E70-30DB3FD0950A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D4EEBF-92FD-4E8B-8E70-30DB3FD0950A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB73183-5BF8-46D9-BC67-93917227DE29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB73183-5BF8-46D9-BC67-93917227DE29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB73183-5BF8-46D9-BC67-93917227DE29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB73183-5BF8-46D9-BC67-93917227DE29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24BAA2D4-F83D-4CB3-8C5E-B29BB7BEFE9C}
+	EndGlobalSection
+EndGlobal
