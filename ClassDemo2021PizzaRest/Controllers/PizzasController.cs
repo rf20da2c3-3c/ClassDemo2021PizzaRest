@@ -59,14 +59,16 @@ namespace ClassDemo2021PizzaRest.Controllers
         }
 
         // PUT api/<PizzasController>/5
-        [HttpPut("{id}")]
+        [HttpPut]
+        [Route("{id}")]
         public bool Put(int id, [FromBody] Pizza value)
         {
             return mgr.Update(id, value);
         }
 
         // DELETE api/<PizzasController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("{id}")]
         public Pizza Delete(int id)
         {
             return mgr.Delete(id);
