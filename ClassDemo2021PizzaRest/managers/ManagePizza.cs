@@ -33,6 +33,19 @@ namespace ClassDemo2021PizzaRest.managers
             return _data.Find(p => p.Id == id);
         }
 
+        public IEnumerable<Pizza> GetName(string name)
+        {
+            return _data.FindAll(p => p.Name.StartsWith(name));
+        }
+
+        public IEnumerable<Pizza> Search(PizzaFilter filter)
+        {
+            double min = filter.MinPris;
+            double max = (filter.MaxPris == 0) ? Double.MaxValue : filter.MaxPris;
+
+            return _data.Where(p => min <= p.Price && p.Price <= max);
+        }
+
         public bool Create(Pizza pizza)
         {
             // todo check for duplicates

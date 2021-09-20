@@ -16,6 +16,10 @@ namespace ClassDemo2021PizzaRest.managers
 
         Pizza Get(int id);
 
+        IEnumerable<Pizza> GetName(string name); 
+
+        IEnumerable<Pizza> Search(PizzaFilter filter);
+
         bool Create(Pizza pizza);
 
         bool Update(int id, Pizza pizza);

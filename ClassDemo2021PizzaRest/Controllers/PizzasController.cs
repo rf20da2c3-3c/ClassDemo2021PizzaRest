@@ -26,10 +26,29 @@ namespace ClassDemo2021PizzaRest.Controllers
         }
 
         // GET api/<PizzasController>/5
-        [HttpGet("{id}")]
-        public Pizza Get(int id)
+        [HttpGet]
+        [Route("{id}")]
+        public IEnumerable<Pizza> Get(int id)
         {
-            return mgr.Get(id);
+            return mgr.Get();
+        }
+
+
+        [HttpGet]
+        [Route("Name/{name}")]
+        public IEnumerable<Pizza> Get(string name)
+        {
+            // hack 
+            //return new List<Pizza>(mgr.Get()).Find(p => p.Name.Contains(name));
+
+            return mgr.GetName(name);
+        }
+
+        [HttpGet]
+        [Route("search")]
+        public IEnumerable<Pizza> Search([FromQuery] PizzaFilter filter)
+        {
+            return mgr.Search(filter);
         }
 
         // POST api/<PizzasController>
