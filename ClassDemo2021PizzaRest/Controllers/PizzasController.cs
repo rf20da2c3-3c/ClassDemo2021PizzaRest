@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ClassDemo2021PizzaRest.managers;
 using ModelLib.model;
+using Microsoft.AspNetCore.Http;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -28,9 +29,18 @@ namespace ClassDemo2021PizzaRest.Controllers
         // GET api/<PizzasController>/5
         [HttpGet]
         [Route("{id}")]
-        public IEnumerable<Pizza> Get(int id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult Get(int id)
         {
-            return mgr.Get();
+            try
+            {
+                return Ok(mgr.Get(id));
+            }
+            catch (KeyNotFoundException knfe)
+            {
+                return NotFound(knfe.Message);
+            }
         }
 
 

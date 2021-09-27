@@ -30,7 +30,12 @@ namespace ClassDemo2021PizzaRest.managers
 
         public Pizza Get(int id)
         {
-            return _data.Find(p => p.Id == id);
+            if (_data.Exists(p => p.Id == id))
+            {
+                return _data.Find(p => p.Id == id);
+            }
+
+            throw new KeyNotFoundException($"Id {id} findes ikke");
         }
 
         public IEnumerable<Pizza> GetName(string name)
