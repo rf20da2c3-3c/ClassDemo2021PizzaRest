@@ -31,6 +31,12 @@ namespace ClassDemo2021PizzaRest
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClassDemo2021PizzaRest", Version = "v1" });
             });
+            // defineret CORS
+            services.AddCors(
+                builder => builder.AddPolicy("GET-PUT",
+                    b => b.AllowAnyHeader().AllowAnyOrigin().WithMethods("GET", "PUT")
+                )
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +50,8 @@ namespace ClassDemo2021PizzaRest
             }
 
             app.UseRouting();
+
+            app.UseCors("GET-PUT");
 
             app.UseAuthorization();
 
