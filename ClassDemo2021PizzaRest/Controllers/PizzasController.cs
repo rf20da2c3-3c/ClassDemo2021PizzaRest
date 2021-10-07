@@ -15,8 +15,20 @@ namespace ClassDemo2021PizzaRest.Controllers
     [ApiController]
     public class PizzasController : ControllerBase
     {
-        private IManagePizzas mgr = new ManagePizza();
+        private readonly IManagePizzas mgr ;
 
+        public PizzasController(PizzaContext context = null)
+        {
+            if (context == null)
+            {
+                mgr = new ManagePizza();
+            }
+            else
+            {
+                mgr = new ManagePizzaDB(context);
+            }
+            
+        }
 
 
         // GET: api/<PizzasController>

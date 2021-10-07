@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClassDemo2021PizzaRest.managers;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClassDemo2021PizzaRest
 {
@@ -37,6 +39,9 @@ namespace ClassDemo2021PizzaRest
                     b => b.AllowAnyHeader().AllowAnyOrigin().WithMethods("GET", "PUT")
                 )
             );
+
+            services.AddDbContext<PizzaContext>(opt =>
+                opt.UseSqlServer(MySecret.ConnectionStringAzure));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
